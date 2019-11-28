@@ -3,7 +3,7 @@
 <suite name="Suite">
     <listeners>
         <listener class-name="TestNGConcepts.Listener"/>
-      <!--  <listener class-name="TestNGConcepts.Reporter"/>-->
+        <listener class-name="TestNGConcepts.Reporter"/>
     </listeners>
     <test name="Listeners_program">
         <classes>

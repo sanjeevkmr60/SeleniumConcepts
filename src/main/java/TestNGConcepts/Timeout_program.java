@@ -3,7 +3,7 @@ package TestNGConcepts;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-@Listeners(value=Reporter.class)
+//@Listeners(value=Reporter.class)
 public class Timeout_program {
 
     @Test(timeOut=200)
