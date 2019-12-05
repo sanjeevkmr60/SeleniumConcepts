@@ -1,0 +1,14 @@
+POM:
+Advantages:
+Object Repository
+Functional Encapsulation
+Low maintenance
+Programmer Friendly
+Low Redundancy
+Efficient & Scalable
+
+Disadvantages
+High Setup Time & Effort
+Skilled labor
+Specific: Not a generic model. Automation Framework developed using POM approach is specific to the application.
+          Unlike keyword-driven/data-driven frameworks, it is not a generic framework.

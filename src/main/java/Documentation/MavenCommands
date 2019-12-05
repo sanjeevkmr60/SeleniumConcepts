@@ -1,0 +1,91 @@
+What is Maven?
+  Maven is Project management tool tht is based POM(Page object model).
+  It is used for project build, dependency and Documentation.
+  It simplifies the build process.
+
+Why Maven was required?
+   Maven project eliminates the Adding set of Jars in each project.
+   It creates write Project Structure.
+   Building and Deploying the project is very Simple.
+
+What is Build Tool?
+    A Build tool take care of everything for building a process.It does the following
+      Genarates the source code.
+      Compliles the source code.
+      Packages the compiled code into JAR of ZIP file.
+      Installs the package code in local repository,server or central repository.
+
+How to install Maven in windows machine?
+     Downlaod  Maven and Extract in machine.
+     Add JAVA_HOME and MAVEN_HOME in environment variables.
+     Add maven path in evironmental variables.
+     verify Maven.
+
+Verify Maven?
+     To verify the Maven is installed or not,open the command prompt and write.
+       mvn --version
+
+       Maven home:C:\Program Files\apache-maven-3.5.4
+       Java home:C:\Program Files\Java\jdk1.8.0_172
+
+Maven Repository?
+        There are 3 types of Maven repository:
+         Local Repository
+         Central Repository
+         Remote Repository
+
+       Maven searches for the dependencies in the following order:
+         Local Repository then Central Repository then Remote Repository.
+
+      Local Repository:Means .m2 folder in your system.
+      Central Repository:It is located on Web.It has been created by the apache maven community itself.
+       Remote Repository:Company specific Libary or custom Library.
+
+Project structure of POM.xml?
+   Project, model versions,groupid,artifactId,version,packaging,name ,dependencies etc...
+    Project:it is a root elemnt of pom.xml
+    model versions:it is sub elemnt of project.it specified modal version .it should be default 4.0.0.
+    groupid:it will identify the project unquiely among all projects(com.test.selenium)
+    artifactId:project name.
+    packaging:it defines packaging such as Jar and War files etc..
+    Dependencies:defines the Dependencies of the Project
+    Dependency:defines a dependency.it is used inside the Dependencies.
+    Scope:defines the scope in the maven project. it is complied,provide,runtime,test and system.
+        Project:selenium
+                  ->src/main/java
+                  ->src/test/java
+                  ->JRE system libarary.
+                  ->Maven dependencies.
+                  ->src
+                     ->target
+                     ->pom.xml
+Maven command:
+ mvn clean install
+ mvn compile
+ mvn test
+
+
+Maven Life Cycle:
+Validate->validate the project is correct and all necessary info is avialable.
+complie->it compiles the source code of project.
+test->test the compiled source code using suitable unit testing framework.These tests should not required the code be
+packed or deployed.
+package->take the compile code and package it in distributable format such as Jar etc..
+verify-->run any checks on the results of integration of tests to ensure the quality criteria are met.
+install->Installs the package code in local repository, for use a dependency in other projects locally.
+deploy->done the build env.,copies the final package into local repository for sharing with other develpers and Projects
+
+mvn deploy :deploy file -DgroupId=<group-id> \
+-DartifcatId=<artifcat-id>\
+-Dversion=<version>\
+-Dpacakaging=<type-of-packaging>\
+-Dfile=<path-of-file>\
+-DrepositoryId=<id-to-map-on-server-section-of-settings.xml>\
+-Durl=<url-of-repository-to-deploy>\
+
+
+
+
+
+
+
