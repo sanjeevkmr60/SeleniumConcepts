@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <listeners>
+        <listener class-name="TestNGConcepts.Listener"/>
+        <listener class-name="TestNGConcepts.Reporter"/>
+        <listener class-name="TestNGConcepts.RetryListenerClass"/>
+    </listeners>
+    <test name="Listeners_program1233">
+        <classes>
+            <class name="TestNGConcepts.Test1"></class>
+        </classes>
+    </test>
+    <test name="Listeners_program">
+        <classes>
+            <class name="TestNGConcepts.Test2"></class>
+        </classes>
+    </test>
+</suite>

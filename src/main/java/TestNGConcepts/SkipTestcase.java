@@ -1,5 +1,6 @@
 package TestNGConcepts;
 
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 public class SkipTestcase {
@@ -21,5 +22,11 @@ public class SkipTestcase {
     @Test(priority = 3)
     public void Four() {
         System.out.println("This is the Test Case number Four");
+    }
+
+    @Test(priority = 4)
+    public void Five() {
+        System.out.println ("This is the Test Case number Four");
+        throw new SkipException ("Skkiping the testcases");
     }
 }
