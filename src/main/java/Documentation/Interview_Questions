@@ -1,0 +1,243 @@
+
+
+-->What are the different exceptions you have faced in Selenium WebDriver?
+  1. ElementNotVisibleException
+  2. StaleElementReferenceException
+  3. NoSuchElementException
+  4. TimeoutException
+  ElementNotVisibleException:
+        This exception will be thrown when you are trying to locate a particular element on webpage that is not
+        currently visible eventhough it is present in the DOM. Also sometimes, if you are trying to locate an element with the xpath which associates with two or more element.
+
+  Stale Element Reference Exception:
+     A stale element reference exception is thrown in one of two cases, the first being more common than the second.
+      The two reasons for Stale element reference are
+          The element has been deleted entirely.
+          The element is no longer attached to the DOM.
+  We face this stale element reference exception when the element we are interacting is destroyed and then recreated again. When this happens the reference of the element in the DOM becomes stale. Hence we are not able to get the reference to the element.
+
+ TimeoutException: This exception is thrown when a command performing an operation does not complete in the stipulated
+ time
+  NoSuchElementException: This exception is thrown when an element with given attributes is not found on the web page
+  Some other exceptions we usually face are as follows:
+  WebDriverException
+  IllegalStateException
+  TimeoutException
+  NoAlertPresentException
+  NoSuchWindowException
+  NoSuchElementException
+
+ -->What are the types of waits available in Selenium WebDriver?(Synchronization)
+    1.Implicit Waits -It sets the default time throught the program.
+    2.Explicit Waits – It sets the default time at a particular instance or statment in the program.
+    3.Fluent Waits – It  define the maximum amount of time to wait for a specific condition and frequency with which to
+                   check the condition before throwing an “ElementNotVisibleException” exception.
+
+-->How to Login into any site if it is showing an Authentication Pop-Up for Username and Password?
+    http://username:password@url
+    e.g. http://myUserName:myPassword@softwaretestingmaterial.com
+
+ --->What are the ways to refresh a browser using Selenium WebDriver?
+       Using driver.navigate().refresh() command.
+       Using driver.get(“URL”) on the current URL or using driver.getCurrentUrl()
+       Using driver.navigate().to(“URL”) on the current URL or driver.navigate().to(driver.getCurrentUrl());
+       Using sendKeys(Keys.F5) on any textbox on the webpage
+
+--->What is the difference between driver.getWindowHandle() and driver.getWindowHandles() in Selenium WebDriver?
+     driver.getWindowHandle() – It returns a handle of the current page (a unique identifier)
+     driver.getWindowHandles() – It returns a set of handles of the all the pages available.
+
+--->What is the difference between driver.close() and driver.quit() methods?
+    driver.close(): To close current WebDriver instance
+    driver.quit(): To close all the opened WebDriver instances
+
+--->What is the difference between driver.findElement() and driver.findElements() commands?
+   1. findElement(): returns a single WebElement (found first) based on the locator passed as parameter
+                    Syntax of findElement()-
+                      WebElement textbox = driver.findElement(By.id(“textBoxLocator”));
+    findElements() :returns a list of WebElements, all satisfying the locator value passed.
+    Syntax of findElements()-
+    List <WebElement> elements = element.findElements(By.id(“value”));
+
+    2.Another difference between the two is- if no element is found then findElement() throws NoSuchElementException
+    whereas findElements() returns a list of 0 elements.
+
+ --->How to handle hidden elements in Selenium WebDriver?
+     We can handle hidden elements by using javaScript executor:
+     (JavascriptExecutor(driver)).executeScript("document.getElementsByClassName(ElementLocator).click();");
+
+ --->List some scenarios which we cannot automate using Selenium WebDriver?
+     1. Bitmap comparison is not possible using Selenium WebDriver
+     2. Automating Captcha is not possible using Selenium WebDriver
+     3. We can not read bar code using Selenium WebDriver
+
+--->How can you use the Recovery Scenario in Selenium WebDriver?
+    By using “Try Catch Block” within Selenium WebDriver Java tests.
+
+-->Have you used any crossbrowsertesting tool to run selenium scripts on cloud?
+   I have used BrowserStack to run selenium tests on multiple browsers & Multiple operating systems in parallel.
+
+--->How to create and run TestNG.xml?
+    In TestNG framework, we need to create TestNG XML file to create and handle multiple test classes.
+     We do configure our test run, set test dependency, include or exclude any test, method, class or package and set
+      priority etc in the XML file.
+
+--->What is the use of @Listener annotation in TestNG?
+    Ans. TestNG listeners are used to configure reports and logging.
+     One of the most widely used listeners in TestNG is ITestListener interface.
+     It has methods like onTestStart, onTestSuccess, onTestFailure, onTestSkipped etc.
+     We should implement this interface creating a listener class of our own.
+     Next, we should add the listeners annotation (@Listeners) in the Class which was created.
+
+-->How can we create a data-driven framework using TestNG?
+    @DataProvider(name="getData")
+     public Object[][] getData(){
+     //Object [][] data = new Object [rowCount][colCount];
+     Object [][] data = new Object [2][2];
+     data [0][0] = "FirstUid";
+     data [0][1] = "FirstPWD";
+     data[1][0] = "SecondUid";
+     data[1][1] = "SecondPWD";
+     return data; }
+-->How to handle browser (chrome) notifications in Selenium?
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("disable-infobars");
+    WebDriver player = new ChromeDriver(options);
+-->How can you redirect browsing from a browser through some proxy?
+   String PROXY = “199.201.125.147:8080”;
+   org.openqa.selenium.Proxy proxy = new.org.openqa.selenium.Proxy();
+   proxy.setHTTPProxy(Proxy)
+    .setFtpProxy(Proxy)
+    .setSslProxy(Proxy)
+   DesiredCapabilities cap = new DesiredCapabilities();
+   cap.setCapability(CapabilityType.PROXY, proxy);
+   WebDriver driver = new FirefoxDriver(cap);
+
+-->How to set the size of browser window using Selenium?
+    driver.manage().window().maximize(); – To maximize the window
+
+   1.  System.out.println(driver.manage().window().getSize());
+     Dimension d = new Dimension(420,600);
+     driver.manage().window().setSize(d);
+   2. ((JavascriptExecutor)driver).executeScript("window.resizeTo(1024, 768);");
+
+-->Can we enter text without using sendKeys()?
+    JavascriptExecutor jse = (JavascriptExecutor) driver;
+    jse.executeScript("document.getElementById(‘Login').value=Test text without sendkeys");
+
+-->What is the significance of testng.xml?
+   it allows execution of multiple test cases from multiple classes
+   It allows parallel execution
+   It allows execution of test cases in groups, where a single test can belong to multiple groups
+
+ --> Explain what does @Test(invocationCount=?) and @Test(threadPoolSize=?) indicate.
+    @Test(invocationCount=?) is a parameter that indicates the number of times this method should be invoked.
+    @Test(threadPoolSize=?) is used for executing suites in parallel. Each suite can be run in a separate thread.
+      @Test(threadPoolSize = 3, invocationCount = 10)
+      public void testServer() {
+      }
+
+ -->Where can you use Selenium Grid?
+    Selenium Grid allows you to run multiple instances of Selenium Remote Control in parallel concurrently and makes
+     them appear as one. By leveraging your existing computing infrastructure, it allows you to run multiple  functional
+      tests in parallel, on multiple machines, against different browsers, in a heterogeneous environment.
+
+-->How to retrieve CSS properties of an element?
+   The values of the css properties can be retrieved using a get() method:
+   Syntax:
+   driver.findElement(By.id(“id“)).getCssValue(“name of css attribute”);
+   driver.findElement(By.id(“id“)).getCssValue(“font-size”);
+
+ -->Mention in what ways you can customize TestNG report?
+    You can customize TestNG report in two ways,
+    Using ITestListener Interface
+    Using IReporter Interface
+
+ -->Mention what are the types of Listeners in TestNG?
+    The types of Listeners in TestNG are,
+    IAnnotationTransformer
+    IAnnotationTransformer2
+    IConfigurable
+    IConfigurationListener
+    IExecutionListener
+    IHookable
+    IInvokedMethodListener
+    IInvokedMethodListener2
+    IMethodInterceptor
+    IReporter
+    ISuiteListener
+    ITestListener
+ -->How to verify the limit of characters of a textbox?
+      Consider the limit is 30 char. The code should be following:
+      driver.findElement(By.id("textfieldID")).sendKeys("RiponAlWasim_RiponAlWasim_RiponAlWasim_RiponAlWasim_RiponAlWasim");//input should be greater than 30 chars
+      int actualLimit = driver.findElement(By.id("textfieldID")).getText().length();
+      assertEquals(actualLimit, 30);
+
+ --->What is the difference between getwindowhandles() and getwindowhandle()?
+     getwindowhandles(): It is used to get the address of all open browsers,
+                         and its return data type is Set<String>.
+     getwindowhandle(): It is used to get the address of the current browser where the control is,
+                        and its return type is a string data type.
+---> How do I handle a frame in WebDriver?
+      Selecting iframe by ID:
+      Locating iframe using the tagName:
+      frame(index)
+      frame(“Name of the Frame”)
+      driver.switchTo().defaultContent();
+
+
+--->How Do You Locate Elements Based On The Text In XPath?
+    //*[text()='Python']
+
+--->How Do You Access The Parent Of A Node With XPath?
+     //span[@id=”current”]/..
+ --->How Do You Get To The Nth Sub-Element Using The XPath?
+     By calling position() in the XPath expression
+     # Example
+     tr[position()=4]
+
+ --->What Does FirefoxDriver Mean, A Class Or An Interface?
+     FirefoxDriver is a Java class, and it implements the WebDriver interface.
+
+ --->Which Is The Super Interface Of Selenium Web Driver?
+     Th SearchContext acts as the super interface for the Web Driver.
+     It is the external interface which has only two methods: findElement() and findElements()
+
+ -->What Does The Webdriver Driver = New FirefoxDriver(); Mean?
+    Webdriver driver = new FirefoxDriver();
+    The above line of code represents the following:
+    The driver is a variable of type ‘Webdriver’ interface.
+    We are instantiating an object of the FirefoxDriver class and storing it into the driver variable.
+
+ --->Why Do We Create A Reference Variable Of Type Webdriver, Not The Actual Browser Type?
+     It is because we could use the same Webdriver variable to hold the object of any browser,
+     such as the ChromeDriver, IEDriver, or SafariDriver, etc.
+
+     # We follow this approach as it can work with any browser instance.
+     WebDriver driver = new FirefoxDriver();
+     # This approach is right too but will work only the Firefox.
+     FirefoxDriver driver = new FirefoxDriver();
+
+ --->What Difference Do You Make Between Soft Vs. Hard Assert In Selenium?
+     Soft Assert: It aggregates the errors that occurred during the test execution. If such an assert fails, the control jumps to the next step.
+     Hard Assert: It immediately responds with an AssertException and breaks the current test. After that, the next case in the sequence gets executed.
+
+ --->The driver.get() method waits until the page finish loading.
+     The driver.navigate() will only redirect and return immediately.
+
+ --->How Can I Move Back And Forth In A Browser Using Selenium?
+     1) navigate().forward() – to move to the next web page as per the browser’s history
+     2) navigate().back() – to move back to the previous page as per the browser’s history
+     3) navigate().refresh() – to reload the current page
+     4) navigate().to(“URL”) – to start a new browser window and opening up the specified link
+
+  -->What Are Challenges Have You Faced With Selenium? And How Did You Overcome Them?
+     Here are some of the problems that testers usually face while doing automation with Selenium.
+
+     Wrong implementation: I used the page object model but had it implemented incorrectly. My classes were focussing on the web elements rather than they should have resembled the user actions.
+     Duplicate code: The project had many category pages. Each category had a different search function instead of handling them at a central place.
+     Ineffective use of wait: I used implicit wait with a fixed timeout. But some pages were timing out due to higher load time. I had to adopt the Fluent wait (with a variable timeout) to overcome this problem.
+     Improper error handling: It was getting hard to debug the cause of a failed test. At some places, the {try-catch} blocks were missing, and hence, cases were skipping w/o giving a proper reason. Therefore, I had to refactor the code by adding asserts and exception handling.
+     Inconsistent XPath: Most of the locators were using the XPath method. And the developers kept them changed while fixing new defects. I called up a discussion with them and agreed to have a fixed XPath or an ID for the web elements.
+     Performance & Localization: We were using the flat files (CSV) initially to feed data to test cases. However, it had us failed in testing localization as well as beaten us on the performance. Ee migrated all of our test data to MySQL and fixed both issues.
+     Monolithic tests: Earlier tests weren’t using the labeling. Honestly, there wasn’t a way to do it. Hence, we integrated our test suite with TestNG and got away with this limitation. Now, we have many test groups like features-based (F1, F2, F3…), priority-based (P1, P2, P3).

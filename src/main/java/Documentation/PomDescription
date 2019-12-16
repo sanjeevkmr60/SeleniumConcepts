@@ -12,3 +12,29 @@ High Setup Time & Effort
 Skilled labor
 Specific: Not a generic model. Automation Framework developed using POM approach is specific to the application.
           Unlike keyword-driven/data-driven frameworks, it is not a generic framework.
+
+
+
+
+What are the advantages of Page Object Model Framework?
+1.Code reusability – We could achieve code reusability by writing the code once and use it in different tests.
+2.Code maintainability – There is a clean separation between test code and page
+                      specific code such as locators and layout which becomes very easy to maintain code. Code changes
+                      only on Page Object Classes when a UI change occurs. It enhances test maintenance and reduces code
+                       duplication.
+
+3.Object Repository – Each page will be defined as a java class. All the fields in the page will be defined in an
+                    interface as members. The class will then implement the interface.
+
+4.Readability – Improves readability due to clean separation between test code and page specific code
+
+What is POM (Page Object Model)? What are its advantages?
+ Page Object Model is a design pattern for creating an Object Repository for web UI elements.
+ Each web page in the  application is required to have it’s own corresponding page class.
+ The page class is thus responsible for finding the WebElements in that page and then perform operations on those WebElements.
+
+The advantages of using POM are:
+
+Allows us to separate operations and flows in the UI from Verification – improves code readability
+Since the Object Repository is independent of Test Cases, multiple tests can use the same Object Repository
+Reusability of code

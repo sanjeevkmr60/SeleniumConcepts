@@ -6,7 +6,7 @@ public class Launchbrowser {
     public static void main(String args[])
     {
         WebDriver driver;
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\SampleTest\\SeleniumConcepts\\src\\test\\java\\SeleniumDrivers\\chromedriver.exe");
         driver= new ChromeDriver();
         driver.get("https://www.google.com/");
         String title = driver.getTitle();

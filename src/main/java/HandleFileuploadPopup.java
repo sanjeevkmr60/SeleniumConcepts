@@ -12,7 +12,5 @@ public class HandleFileuploadPopup {
         driver.get("https://html.com/input-type-file/");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id='fileupload']")).sendKeys("C:\\Users\\sanjeevb\\Desktop\\Wizard.txt");
-
-
     }
 }
