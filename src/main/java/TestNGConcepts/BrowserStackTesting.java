@@ -36,10 +36,10 @@ public class BrowserStackTesting {
         caps.setCapability("name", "Bstack-[Java] Sample Test");
 
         WebDriver driver = new RemoteWebDriver (new URL(URL), caps);
-        driver.get("https://www.softwaretestingmaterial.com/");
+        driver.get("https://www.guru99.com/");
         String title = driver.getTitle ( );
         System.out.println (title );
-        Assert.assertEquals (title,"Software Testing Material - Free Software Testing & Programming Tutorial" );
+        Assert.assertEquals (title,"Meet Guru99 - Free Training Tutorials & Video for IT Courses" );
 
         driver.quit();
     }

@@ -5,13 +5,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AlertPopHandling {
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         WebDriver driver;
         System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
         driver= new ChromeDriver();
         driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
         driver.findElement(By.name("proceed")).click();
         Alert alert = driver.switchTo().alert();
+        Thread.sleep (3000);
         if(alert.getText().equals("Please enter a valid user name"))
             System.out.println(alert.getText());
         else
