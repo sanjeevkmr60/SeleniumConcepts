@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 //@Listeners(value=Reporter.class)
-public class Timeout_program {
+public class  Timeout_program {
 
     @Test(timeOut=200)
     public void testcase1() throws InterruptedException
